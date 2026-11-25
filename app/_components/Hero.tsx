@@ -8,11 +8,11 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="page-container flex flex-wrap items-center gap-12 pt-14 pb-24"
+      className="page-container flex flex-wrap items-center gap-10 pt-8 pb-20 sm:gap-12 sm:pt-14 sm:pb-24"
     >
-      <div className="flex min-w-0 flex-[999_1_520px] flex-col gap-6">
+      <div className="flex min-w-0 flex-[999_1_520px] flex-col gap-5 sm:gap-6">
         <Eyebrow dot>{hero.eyebrow}</Eyebrow>
-        <h1 className="text-[clamp(44px,6vw,80px)] leading-[1.04]">
+        <h1 className="text-[clamp(36px,11.5vw,44px)] leading-[1.08] sm:text-[clamp(44px,6vw,80px)] sm:leading-[1.04]">
           {hero.headline}{" "}
           <span className="highlight-mark">{hero.headlineHighlight}</span>
         </h1>

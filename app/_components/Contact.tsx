@@ -14,7 +14,7 @@ export function Contact() {
       <Eyebrow>{contact.eyebrow}</Eyebrow>
       <h2
         id="contact-title"
-        className="text-[clamp(40px,5.5vw,68px)] leading-[1.05]"
+        className="text-[clamp(34px,10.5vw,40px)] leading-[1.08] sm:text-[clamp(40px,5.5vw,68px)] sm:leading-[1.05]"
       >
         {contact.title}{" "}
         <span className="highlight-mark">{contact.titleHighlight}</span>

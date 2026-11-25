@@ -13,7 +13,7 @@ export function Work() {
     >
       <div className="flex flex-col gap-2.5">
         <Eyebrow>{work.eyebrow}</Eyebrow>
-        <h2 id="work-title" className="text-[46px] leading-[1.1]">
+        <h2 id="work-title" className="text-[clamp(32px,9.5vw,46px)] leading-[1.1] sm:text-[46px]">
           {work.title}
         </h2>
       </div>

@@ -4,7 +4,7 @@ import { SmartLink } from "./SmartLink";
 
 export function WorkCard({ item }: { item: WorkItem }) {
   return (
-    <article className="flex min-w-0 flex-[1_1_500px] flex-col gap-4 rounded-card border border-border bg-card p-[30px]">
+    <article className="flex min-w-0 flex-[1_1_500px] flex-col gap-4 rounded-card border border-border bg-card p-6 sm:p-[30px]">
       <div className="flex flex-wrap items-center justify-between gap-2.5">
         <span className="inline-flex items-center gap-2 rounded-pill bg-pass-bg px-3 py-1.5 font-mono text-xs font-bold text-pass-text">
           <span aria-hidden="true">✓</span>

@@ -21,7 +21,7 @@ export function About() {
         </div>
 
         <div className="flex min-w-0 flex-[1_1_520px] flex-col gap-[18px]">
-          <h2 id="about-title" className="text-[44px] leading-[1.1] text-background">
+          <h2 id="about-title" className="text-[clamp(32px,9.5vw,44px)] leading-[1.1] text-background sm:text-[44px]">
             {about.title}
           </h2>
           {about.paragraphs.map((text) => (
