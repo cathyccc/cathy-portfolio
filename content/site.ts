@@ -98,7 +98,7 @@ export const site = {
           text: "A search with more infants than adults returned nothing and showed no error.",
         },
         stack: ["React", "Node.js", "Zod", "Vitest", "Playwright"],
-        link: { label: "Read the story", href: "/work/travel-deal-finder" },
+        link: { label: "Live demo", href: "https://vantage-travel-deal-tracker.vercel.app/" },
       },
       {
         badge: "PASS · 79 tests",
@@ -125,7 +125,7 @@ export const site = {
           "Playwright",
           "TypeScript",
           "GitHub Actions",
-          { label: "Stripe tests", href: "https://github.com/cathyccc/stripe-api-playwright" },
+          "Stripe tests",
         ],
         link: {
           label: "See the tests",
@@ -163,10 +163,5 @@ export const site = {
     credit: "© 2026 Cathy Chan · Designed, built and tested by me",
     /** A check mark is added before this. */
     status: "all tests passing",
-  },
-
-  caseStudyPlaceholder: {
-    title: "Case study coming soon",
-    backLink: { label: "Back to home", href: "/" } satisfies SiteLink,
   },
 };
