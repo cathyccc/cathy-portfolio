@@ -42,11 +42,18 @@
   --color-terminal-green: #5bd08f;
   --color-terminal-grey: #a8a29a;
 
-  /* Corner radius: rounded-pill, rounded-card, rounded-terminal, rounded-chip */
-  --radius-pill: 999px; /* buttons, badges, tags */
+  /* Dark surfaces (about section, terminal details) */
+  --color-dark-border: #3a3631; /* dividers and placeholder fill on dark */
+  --color-dark-dashed: #6e6860; /* dashed placeholder border on dark */
+  --color-dark-body: #cfc8be; /* body text on dark */
+
+  /* Corner radius: rounded-pill, rounded-card, rounded-terminal, ... */
+  --radius-pill: 999px; /* buttons, badges, tags, nav links */
   --radius-card: 22px; /* cards */
-  --radius-terminal: 28px; /* terminal panel */
-  --radius-chip: 14px; /* small chips */
+  --radius-terminal: 20px; /* terminal / test runner panel */
+  --radius-photo: 28px; /* about photo */
+  --radius-chip: 14px; /* small chips, "bug caught" box */
+  --radius-logo: 12px; /* "cc" logo mark */
 }
 
 /* Marker-stroke highlight covering the bottom 40% of the text. */

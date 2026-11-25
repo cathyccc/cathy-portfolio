@@ -30,7 +30,9 @@ const swatches = [
 const radii = [
   { name: "rounded-chip", value: "14px", className: "rounded-chip" },
   { name: "rounded-card", value: "22px", className: "rounded-card" },
-  { name: "rounded-terminal", value: "28px", className: "rounded-terminal" },
+  { name: "rounded-terminal", value: "20px", className: "rounded-terminal" },
+  { name: "rounded-photo", value: "28px", className: "rounded-photo" },
+  { name: "rounded-logo", value: "12px", className: "rounded-logo" },
   { name: "rounded-pill", value: "999px", className: "rounded-pill" },
 ];
 
@@ -133,7 +135,7 @@ export default function DesignPage() {
             data-surface="dark"
             className="flex flex-col rounded-terminal bg-terminal-bg p-6 font-mono text-sm text-terminal-text"
           >
-            <p className="text-terminal-grey">terminal-grey · 28px panel</p>
+            <p className="text-terminal-grey">terminal-grey · 20px panel</p>
             <p>
               <span className="text-terminal-green">$</span> terminal-text
             </p>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, JetBrains_Mono, Literata } from "next/font/google";
+import { site } from "@/content/site";
 import "./globals.css";
 
 // Headings: variable font with the optical size axis (opsz 7–72).
@@ -28,8 +29,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cathy Chan",
-  description: "Personal portfolio of Cathy Chan",
+  title: site.meta.title,
+  description: site.meta.description,
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

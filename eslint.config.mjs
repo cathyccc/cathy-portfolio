@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Local design export (git-ignored), not project code.
+    "design-reference/**",
   ]),
 ]);
 

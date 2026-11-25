@@ -1,9 +1,21 @@
+import { About } from "./_components/About";
+import { Contact } from "./_components/Contact";
+import { Footer } from "./_components/Footer";
+import { Header } from "./_components/Header";
+import { Hero } from "./_components/Hero";
+import { Work } from "./_components/Work";
+
 export default function Home() {
   return (
-    <main className="flex flex-1 items-center justify-center px-4">
-      <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-        Cathy Chan
-      </h1>
-    </main>
+    <>
+      <Header />
+      <main className="flex-1">
+        <Hero />
+        <Work />
+        <About />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }
