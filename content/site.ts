@@ -27,6 +27,12 @@ export type WorkItem = {
   link: SiteLink;
 };
 
+export type RunnerTest = {
+  label: string;
+  /** Smaller grey line under the label. */
+  detail: string;
+};
+
 const links = {
   github: "https://github.com/cathyccc",
   linkedin: "https://linkedin.com/in/cathy-chan",
@@ -68,8 +74,27 @@ export const site = {
       { label: "GitHub", href: links.github },
       { label: "LinkedIn", href: links.linkedin },
     ] satisfies SiteLink[],
-    /** Temporary: label for the box where the test runner will go. */
-    runnerPlaceholder: "Test runner — coming next",
+    /** The animated test runner panel beside the headline. */
+    runner: {
+      fileName: "cathy.test.ts",
+      /** Button label; a ▶ is added before it. */
+      runLabel: "Run tests",
+      /** Shown as describe('…'). */
+      describe: "Cathy Chan",
+      tests: [
+        { label: "designs with the user in mind", detail: "former graphic designer" },
+        { label: "builds full-stack web apps", detail: "React · TypeScript · Node.js" },
+        { label: "uses AI, reviews every change", detail: "Claude writes fast; I check its work" },
+        { label: "hunts edge cases", detail: "more infants than adults? caught it" },
+        { label: "turns bugs into tests", detail: "Vitest · Playwright · GitHub Actions" },
+        { label: "keeps learning", detail: "currently: Python" },
+      ] satisfies RunnerTest[],
+      runningStatus: "Running…",
+      doneStatus: "Ready to join your team.",
+      /** Screen-reader-only words for each test's icon. */
+      passedLabel: "passed",
+      pendingLabel: "pending",
+    },
   },
 
   work: {

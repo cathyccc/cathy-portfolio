@@ -41,6 +41,9 @@
   --color-terminal-text: #ede7df;
   --color-terminal-green: #5bd08f;
   --color-terminal-grey: #a8a29a;
+  --color-terminal-red: #f26b5b; /* first window dot */
+  --color-terminal-pending: #6e6860; /* not-yet-passed test */
+  --color-terminal-detail: #8c857c; /* small line under each test */
 
   /* Dark surfaces (about section, terminal details) */
   --color-dark-border: #3a3631; /* dividers and placeholder fill on dark */

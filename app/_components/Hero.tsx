@@ -1,6 +1,7 @@
 import { site } from "@/content/site";
 import { CtaButtons } from "./CtaButtons";
 import { Eyebrow } from "./Eyebrow";
+import { TestRunner } from "./TestRunner";
 
 export function Hero() {
   const hero = site.hero;
@@ -24,13 +25,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Placeholder for the animated test runner (next step). */}
-      <div
-        aria-hidden="true"
-        className="flex min-h-[440px] min-w-0 flex-[1_1_440px] items-center justify-center rounded-terminal border-2 border-dashed border-dark-dashed bg-terminal-bg p-6 text-center font-mono text-sm text-terminal-grey shadow-[0_24px_48px_rgba(31,29,26,0.18)]"
-      >
-        {hero.runnerPlaceholder}
-      </div>
+      <TestRunner />
     </section>
   );
 }
