@@ -71,13 +71,20 @@ export function TestRunner() {
           })}
         </ul>
 
-        <div className="mt-2 flex flex-wrap gap-x-[18px] gap-y-1.5 border-t border-dark-border pt-3.5 text-[13.5px]">
+        <div className="mt-2 flex flex-col gap-1.5 border-t border-dark-border pt-3.5 text-[13.5px]">
           <span>
             Tests: <span className="font-bold text-terminal-green">{passed} passed</span>,{" "}
             {total} total
           </span>
-          <span className="text-terminal-grey">
-            {done ? runner.doneStatus : runner.runningStatus}
+          {/* Both statuses share one grid cell, so the line is always as
+              tall as the longer one and the panel never changes height. */}
+          <span className="grid text-terminal-grey">
+            <span className={`col-start-1 row-start-1 ${done ? "invisible" : ""}`}>
+              {runner.runningStatus}
+            </span>
+            <span className={`col-start-1 row-start-1 ${done ? "" : "invisible"}`}>
+              {runner.doneStatus}
+            </span>
           </span>
         </div>
 
