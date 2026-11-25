@@ -1,26 +1,146 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ------------------------------------------------------------------
+   Design tokens
+   Every colour below becomes a Tailwind utility, e.g. bg-background,
+   text-ink, border-border, bg-pass-bg, text-terminal-green.
+   ------------------------------------------------------------------ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Fonts (CSS variables come from next/font in app/layout.tsx) */
+  --font-heading: var(--font-literata), Georgia, serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  /* Heading letter-spacing (also available as tracking-heading) */
+  --tracking-heading: -0.02em;
+
+  /* Surfaces and text */
+  --color-background: #fbf7f2;
+  --color-ink: #1f1d1a;
+  --color-muted: #4a4640;
+  --color-subtle: #6b655c;
+  --color-border: #e8e1d7;
+  --color-card: #ffffff;
+
+  /* Accent (buttons, links) */
+  --color-accent: #1e7a4c;
+
+  /* Pass badge */
+  --color-pass-bg: #e4f4ea;
+  --color-pass-text: #17603b;
+
+  /* Highlight marker */
+  --color-highlight: #f6c445;
+
+  /* "Bug caught" box */
+  --color-bug-bg: #fff6da;
+  --color-bug-label: #6b5310;
+
+  /* Terminal */
+  --color-terminal-bg: #1f1d1a;
+  --color-terminal-text: #ede7df;
+  --color-terminal-green: #5bd08f;
+  --color-terminal-grey: #a8a29a;
+
+  /* Corner radius: rounded-pill, rounded-card, rounded-terminal, rounded-chip */
+  --radius-pill: 999px; /* buttons, badges, tags */
+  --radius-card: 22px; /* cards */
+  --radius-terminal: 28px; /* terminal panel */
+  --radius-chip: 14px; /* small chips */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Marker-stroke highlight covering the bottom 40% of the text. */
+@utility highlight-mark {
+  background: linear-gradient(transparent 60%, var(--color-highlight) 60%);
+  padding-inline: 4px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Buttons: pill, DM Sans 700, at least 50px tall, 25px side padding.
+   Both variants carry a 2px border so their heights always match. */
+@utility btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 50px;
+  padding-inline: 25px;
+  border: 2px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 150ms,
+    color 150ms,
+    border-color 150ms;
+}
+
+@utility btn-primary {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  &:hover {
+    background-color: var(--color-pass-text);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+@utility btn-secondary {
+  background-color: transparent;
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+/* Centred page container: max 1200px wide, 24px side padding. */
+@utility page-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    /* Long words and URLs wrap instead of pushing the page sideways. */
+    overflow-wrap: break-word;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    letter-spacing: var(--tracking-heading);
+    /* Large sizes pick up Literata's display letter shapes via opsz. */
+    font-optical-sizing: auto;
+    text-wrap: balance;
+  }
+
+  /* Card titles */
+  h3 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  /* Visible keyboard focus on every link, button and control. */
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* On dark surfaces (e.g. the terminal), switch to a light outline. */
+  [data-surface="dark"] :focus-visible {
+    outline-color: var(--color-terminal-green);
+  }
 }
