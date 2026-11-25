@@ -42,3 +42,9 @@ next-env.d.ts
 
 # design reference export (local only)
 /design-reference/
+
+# playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
