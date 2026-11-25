@@ -116,7 +116,7 @@ I built this site with Claude Code. I designed the site, gave Claude Code a brie
 
 ## Running it locally
 
-Requires Node.js 20.9 or later (CI uses Node 22).
+Requires Node.js 20.9 or later (CI uses Node 24).
 
 ```bash
 npm install
