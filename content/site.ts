@@ -19,7 +19,7 @@ export type WorkItem = {
   badge: string;
   title: string;
   description: string;
-  /** The yellow box, e.g. "Bug caught". */
+  /** The yellow box. The label is set per card, e.g. "Bug caught" or "What it covers". */
   callout: { label: string; text: string };
   /** Stack line; items are joined with " · ". A link renders as a link. */
   stack: (string | SiteLink)[];
@@ -139,22 +139,17 @@ export const site = {
       },
       {
         badge: "PASS · Runs on every push",
-        title: "Playwright Test Suites",
+        title: "Stripe Payments API Test Suite",
         description:
-          "A 37-test end-to-end checkout suite on the Page Object Model, plus API tests for Stripe payments and refunds.",
+          "An API test suite for Stripe’s test-mode Payment Intents and Refunds endpoints.",
         callout: {
           label: "What it covers",
-          text: "Card declines, invalid input and boundary amounts, all checked automatically in GitHub Actions.",
+          text: "Charges, declines, validation, boundary amounts and refunds, with status-code and error-code assertions.",
         },
-        stack: [
-          "Playwright",
-          "TypeScript",
-          "GitHub Actions",
-          "Stripe tests",
-        ],
+        stack: ["TypeScript", "Playwright"],
         link: {
-          label: "See the tests",
-          href: "https://github.com/cathyccc/saucedemo-playwright",
+          label: "See the code",
+          href: "https://github.com/cathyccc/stripe-api-playwright",
         },
       },
     ] satisfies WorkItem[],
