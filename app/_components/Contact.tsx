@@ -22,7 +22,10 @@ export function Contact() {
       <p className="max-w-[560px] text-lg leading-[1.6] text-muted">
         {contact.intro}
       </p>
-      <CtaButtons primary={contact.primaryCta} secondary={contact.secondaryCtas} />
+      {/* Stretch so the buttons span the full width on phones, like the hero. */}
+      <div className="self-stretch">
+        <CtaButtons primary={contact.primaryCta} secondary={contact.secondaryCtas} />
+      </div>
     </section>
   );
 }

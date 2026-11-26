@@ -178,7 +178,9 @@ export const site = {
   },
 
   footer: {
-    credit: "© 2026 Cathy Chan · Designed, built and tested by me",
+    /** Shown as "copyright · tagline"; on phones they sit on separate lines. */
+    copyright: "© 2026 Cathy Chan",
+    tagline: "Designed, built and tested by me",
     /** A check mark is added before this. */
     status: "all tests passing",
   },

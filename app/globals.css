@@ -59,8 +59,10 @@
   --radius-logo: 12px; /* "cc" logo mark */
 }
 
-/* Marker-stroke highlight covering the bottom 40% of the text. */
+/* Marker-stroke highlight covering the bottom 40% of the text.
+   The phrase never wraps, so the marker is never split across lines. */
 @utility highlight-mark {
+  white-space: nowrap;
   background: linear-gradient(transparent 60%, var(--color-highlight) 60%);
   padding-inline: 4px;
   -webkit-box-decoration-break: clone;
