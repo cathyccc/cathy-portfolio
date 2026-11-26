@@ -157,9 +157,7 @@ export const site = {
 
   about: {
     title: "Designer first. Developer second. Tester always.",
-    /** Shown until a real photo is added. */
-    photoPlaceholder: "[your photo]",
-    photoPlaceholderLabel: "Placeholder for your photo",
+    photo: { src: "/cathy.jpg", alt: "Cathy Chan" },
     paragraphs: [
       "I started as a designer, most recently at Hallmark, then learned to code at Bitmaker (now General Assembly). I worked on an Agile team at Financeit, then became the sole developer at a PropTech startup. After a few years raising my two kids, I’m back building things and making sure they work.",
       "I use AI to build fast, then review every change. A bug I find by hand always becomes a test.",
