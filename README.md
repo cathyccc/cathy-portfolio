@@ -114,6 +114,14 @@ These run against the production build (`next build` + `next start`):
 
 I built this site with Claude Code. I designed the site, gave Claude Code a brief for each step, then reviewed every plan and change before approving it. I tested the results myself in the browser and DevTools. Things I caught along the way include a layout shift when the test run finished, tests with hard-coded timings, and duplicate links.
 
+## How I direct Claude Code
+
+I keep the rules I give Claude Code in the repo, so they apply to every session:
+
+- [`CLAUDE.md`](CLAUDE.md) holds the project instructions: the stack, the rule that copy in `content/site.ts` never changes without my approval, tests for every behaviour change, the accessibility rules I follow, and how I commit.
+- [`/check`](.claude/skills/check/SKILL.md) runs lint, unit tests, end-to-end tests and the build, then gives me a short pass/fail summary. CLAUDE.md requires it to pass before any commit.
+- [Hooks](.claude/settings.json) enforce two things automatically: Claude can't read or edit `.env` files ([`block-env.mjs`](.claude/hooks/block-env.mjs)), and every file it edits is linted straight away ([`lint-edited.mjs`](.claude/hooks/lint-edited.mjs)). The `.env` hook is a guardrail, not a security boundary, so a permission deny rule in the same file backs it up.
+
 ## Running it locally
 
 Requires Node.js 20.9 or later (CI uses Node 24).
